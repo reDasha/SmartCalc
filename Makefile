@@ -39,20 +39,11 @@ install:
 uninstall:
 	-rm -rf build*
 
-dvi:
-	#open ../README.md
-
 dist: clean
 	mkdir SmartCalc
 	cp -r *.c *.h *.cpp *.ui *.pro Makefile SmartCalc
 	tar -cvzf dist.tar.gz SmartCalc
 	-rm -rf SmartCalc
-
-cpp_check:
-	cppcheck smart_calc.c test.c
-
-valgrind:
-	valgrind --leak-check=full --track-origins=yes --trace-children=yes -s ./test
 
 clean:
 	rm -f $(LIBRARY) $(LIB_OBJ_FILES) test *.out *.gch *.gcov *.gcda *.gcno *.o *.a coverage.info gcov_report test

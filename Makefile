@@ -1,11 +1,9 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -std=c11 #-fsanitize-memory-track-origins #-fsanitize=address -fno-omit-frame-pointer -g
+CFLAGS = -Wall -Wextra -Werror -std=c11
 CHECK_FLAGS = $(shell pkg-config --libs check)
 GCOV_FLAGS = --coverage
 
-# Список исходных файлов
 LIB_SRC_FILES = smart_calc.c
-# Список объектных файлов
 LIB_OBJ_FILES = smart_calc.o
 TEST_C = test.c
 
